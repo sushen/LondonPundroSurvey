@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "588357935077",
+    "firebase_url": "https://pundrosurvey-bd.firebaseio.com",
+    "project_id": "pundrosurvey-bd",
+    "storage_bucket": "pundrosurvey-bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588357935077:android:b063333bca0205c91d990c",
+        "android_client_info": {
+          "package_name": "blog.video.biswas.londonpundrosurvey"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588357935077-998akdo2c80nh2f8bs98eo4g4gsp3ogp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "blog.video.biswas.londonpundrosurvey",
+            "certificate_hash": "ef9bd4b7b1c31092880d06de6269bed66d1690f9"
+          }
+        },
+        {
+          "client_id": "588357935077-cilb8rvfd203uarshcvrbutd7k9lfn4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2MN5nsgPBT41Q8y4SQV5qMH7PXmKxbCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588357935077-cilb8rvfd203uarshcvrbutd7k9lfn4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
