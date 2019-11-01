@@ -15,11 +15,11 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="First Name"
-        app:layout_constraintStart_toStartOf="@+id/edtSecoundName"
+        app:layout_constraintStart_toStartOf="@+id/edtLastName"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edtSecoundName"
+        android:id="@+id/edtLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="98dp"
@@ -38,7 +38,7 @@
         android:inputType="textPersonName"
         android:hint="Email"
         app:layout_constraintStart_toStartOf="@+id/edtComment"
-        app:layout_constraintTop_toBottomOf="@+id/edtSecoundName" />
+        app:layout_constraintTop_toBottomOf="@+id/edtLastName" />
 
     <EditText
         android:id="@+id/edtComment"

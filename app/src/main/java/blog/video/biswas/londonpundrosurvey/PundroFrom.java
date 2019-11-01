@@ -6,6 +6,16 @@ public class PundroFrom {
     private String LastName;
     private String mail;
 
+    public String getComment() {
+        return Comment;
+    }
+
+    public void setComment(String comment) {
+        Comment = comment;
+    }
+
+    private String Comment;
+
     public String getId() {
         return id;
     }
@@ -37,14 +47,4 @@ public class PundroFrom {
     public void setMail(String mail) {
         this.mail = mail;
     }
-
-    public String getComment() {
-        return comment;
-    }
-
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
-
-    private String comment;
 }
