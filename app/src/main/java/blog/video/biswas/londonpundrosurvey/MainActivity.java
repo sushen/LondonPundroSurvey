@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         .setValue(pundroFrom);
 
 
-                Intent intent = new Intent (MainActivity.this, FromReview.class);
+                Intent intent = new Intent (MainActivity.this, Login.class);
                 startActivity(intent);
             }
         });
