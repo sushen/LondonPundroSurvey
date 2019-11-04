@@ -11,6 +11,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import blog.video.biswas.londonpundrosurvey.databinding.ActivityLoginBinding;
 
@@ -73,7 +74,7 @@ public class Login extends AppCompatActivity {
                         binding.edtemail.requestFocus();
                         return;
                     } else
-                        login(binding.edtemail.getText().toString(), binding.edtpassword.getText().toString();
+                        login(binding.edtemail.getText().toString(),binding.edtpassword.getText().toString());
 
                 } catch (Exception e) {
                     AlertDialog DiaOK = DialogOK();
@@ -98,7 +99,8 @@ public class Login extends AppCompatActivity {
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
                 } else {
-                    Log.i("registrationLog", "Fail to login");
+                    //Log.i("registrationLog", "Fail to login");
+                    Toast.makeText(Login.this, "Please Input Correct Email or Password !",Toast.LENGTH_LONG).show();
                 }
 
             }
