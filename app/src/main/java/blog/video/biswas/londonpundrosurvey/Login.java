@@ -66,29 +66,16 @@ public class Login extends AppCompatActivity {
                         DiaOK.show();
                         binding.edtpassword.requestFocus();
                         return;
-                    } else {
-                        if (binding.edtemail.getText().toString().trim().length() == 0) {
-                            AlertDialog DiaOK = DialogOK();
-                            DiaOK.setMessage("Please select the TAB ID");
-                            DiaOK.show();
-                            binding.edtemail.requestFocus();
-                            return;
-                        } else {
-                            cursor = login(binding.edtemail.getText().toString(), binding.edtpassword.getText().toString();
-                            if (cursor.moveToFirst()) {
-                                do {
-                                    // Password validation
-                                    String PasswordDB = cursor.getString(cursor.getColumnIndex("Password"));
+                    } else if (binding.edtemail.getText().toString().trim().length() == 0) {
+                        AlertDialog DiaOK = DialogOK();
+                        DiaOK.setMessage("Please select the TAB ID");
+                        DiaOK.show();
+                        binding.edtemail.requestFocus();
+                        return;
+                    } else
+                        login(binding.edtemail.getText().toString(), binding.edtpassword.getText().toString();
 
-                                }
-                                while (cursor.moveToNext());
-                            }
-                            cursor.close();
-                        }
-                    }
-
-                } catch (
-                        Exception e) {
+                } catch (Exception e) {
                     AlertDialog DiaOK = DialogOK();
                     DiaOK.setMessage(e.toString() + " SignIn button click");
                     DiaOK.show();
@@ -117,17 +104,15 @@ public class Login extends AppCompatActivity {
             }
         });
     }
-    private AlertDialog DialogOK()
-    {
+
+    private AlertDialog DialogOK() {
         AlertDialog DialogBox = new AlertDialog.Builder(this)
                 .setTitle("Login")
                 .setMessage("")
                 .setIcon(R.drawable.name)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener()
-                {
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int whichButton)
-                    {
+                    public void onClick(DialogInterface dialog, int whichButton) {
 
                     }
                 })
