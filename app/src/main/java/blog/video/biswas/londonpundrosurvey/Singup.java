@@ -7,74 +7,63 @@ import androidx.databinding.DataBindingUtil;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
-import blog.video.biswas.londonpundrosurvey.databinding.ActivityLoginBinding;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import blog.video.biswas.londonpundrosurvey.databinding.ActivitySingupBinding;
 
-public class Login extends AppCompatActivity {
+public class Singup extends AppCompatActivity {
 
-    DateTimeHandler TimeHandler;
-    DBHelper DatabaseHelper;
-
-    Globals Global;
-    Cursor cursor;
-
-
-    private ActivityLoginBinding binding;
+    private ActivitySingupBinding binding;
     private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_login);
+        binding = DataBindingUtil.setContentView(this,R.layout.activity_singup);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
 
-        DatabaseHelper = new DBHelper();
-        TimeHandler = new DateTimeHandler();
 
-
-        binding.tvregister.setOnClickListener(new View.OnClickListener() {
+        binding.tvlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(Singup.this, Login.class);
+                startActivity(intent);
+                finish();
             }
         });
 
-        binding.btnlogin.setOnClickListener(new View.OnClickListener() {
+
+
+        binding.btnsingup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                //login(binding.edtemail.getText().toString(), binding.edtpassword.getText().toString());
 
-
-                //************************************************
                 try {
-                    if (binding.edtpassword.getText().toString().trim().length() == 0) {
+                    if (binding.edtpaswordsingup.getText().toString().trim().length() == 0) {
                         AlertDialog DiaOK = DialogOK();
                         DiaOK.setMessage("Please enter your password");
                         DiaOK.show();
-                        binding.edtpassword.requestFocus();
+                        binding.edtpaswordsingup.requestFocus();
                         return;
-                    } else if (binding.edtemail.getText().toString().trim().length() == 0) {
+                    } else if (binding.edtemailsingup.getText().toString().trim().length() == 0) {
                         AlertDialog DiaOK = DialogOK();
                         DiaOK.setMessage("Please select the TAB ID");
                         DiaOK.show();
-                        binding.edtemail.requestFocus();
+                        binding.edtemailsingup.requestFocus();
                         return;
                     } else
-                        login(binding.edtemail.getText().toString(),binding.edtpassword.getText().toString());
+                        signup(binding.edtemailsingup.getText().toString(), binding.edtpaswordsingup.getText().toString());
 
                 } catch (Exception e) {
                     AlertDialog DiaOK = DialogOK();
@@ -85,33 +74,23 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        binding.tvregister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Login.this, Singup.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
 
     }
 
-    //        });
-//                }
-    private void login(String email, String password) {
-        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void signup(String email, String password){
+
+        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if (task.isSuccessful()) {
-                    Intent intent = new Intent(Login.this, MainActivity.class);
+                if(task.isSuccessful()){
+                    Intent intent = new Intent(Singup.this, Login.class);
                     startActivity(intent);
-                } else {
-                    //Log.i("registrationLog", "Fail to login");
-                    Toast.makeText(Login.this, "Please Input Correct Email or Password !",Toast.LENGTH_LONG).show();
+                    finish();
+                }else {
+                    //Log.i("registrationLog", "Fail to create account");
+                    Toast.makeText(Singup.this, "Fail to create account !",Toast.LENGTH_LONG).show();
                 }
-
             }
         });
     }
@@ -130,4 +109,5 @@ public class Login extends AppCompatActivity {
                 .create();
         return DialogBox;
     }
+
 }
