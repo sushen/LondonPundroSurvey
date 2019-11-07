@@ -2,122 +2,184 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edtFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="24dp"
-        android:ems="10"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/edtLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/edtFirstName"
-        app:layout_constraintStart_toStartOf="@+id/edtFirstName"
-        app:layout_constraintTop_toBottomOf="@+id/edtFirstName" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/editEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/edtLastName"
-        app:layout_constraintStart_toStartOf="@+id/edtLastName"
-        app:layout_constraintTop_toBottomOf="@+id/edtLastName" />
+            <Spinner
+                android:id="@+id/spicountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:entries="@array/country_arrays"
 
-    <EditText
-        android:id="@+id/edtComment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Number"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/editEmail"
-        app:layout_constraintStart_toStartOf="@+id/editEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editEmail" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Submit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <EditText
+                android:id="@+id/edtFirstName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:ems="10"
+                android:hint="First Name"
+                android:inputType="textPersonName"
+                app:layout_constraintStart_toStartOf="@+id/spicountry"
+                app:layout_constraintTop_toBottomOf="@+id/spicountry" />
 
-    <TextView
-        android:id="@+id/tvq1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:gravity="left"
-        android:text="1. The product or service performed exactly as I expected."
-        android:textColor="#000000"
-        app:layout_constraintStart_toStartOf="@+id/edtComment"
-        app:layout_constraintTop_toBottomOf="@+id/edtComment" />
+            <EditText
+                android:id="@+id/edtLastName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Last Name"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/edtFirstName"
+                app:layout_constraintStart_toStartOf="@+id/edtFirstName"
+                app:layout_constraintTop_toBottomOf="@+id/edtFirstName" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/tvq1"
-        app:layout_constraintTop_toBottomOf="@+id/tvq1">
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/edtLastName"
+                app:layout_constraintStart_toStartOf="@+id/edtLastName"
+                app:layout_constraintTop_toBottomOf="@+id/edtLastName" />
 
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="Strongly Disagree" />
+            <EditText
+                android:id="@+id/edtComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Number"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/editEmail"
+                app:layout_constraintStart_toStartOf="@+id/editEmail"
+                app:layout_constraintTop_toBottomOf="@+id/editEmail" />
 
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="Neither Agree nor Disagree" />
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Submit"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/CBq4" />
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="Somewhat Disagree" />
+            <TextView
+                android:id="@+id/tvq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="left"
+                android:text="1. The product or service performed exactly as I expected."
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="@+id/edtComment"
+                app:layout_constraintTop_toBottomOf="@+id/edtComment" />
 
-        <RadioButton
-            android:id="@+id/radioButton6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:text="Somewhat Agree" />
-    </RadioGroup>
+            <RadioGroup
+                android:id="@+id/rgq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="@+id/tvq1"
+                app:layout_constraintTop_toBottomOf="@+id/tvq1">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup2"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />
+                <RadioButton
+                    android:id="@+id/rbq11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Strongly Disagree" />
+
+                <RadioButton
+                    android:id="@+id/rbq12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Neither Agree nor Disagree" />
+
+                <RadioButton
+                    android:id="@+id/rbq13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Somewhat Disagree" />
+
+                <RadioButton
+                    android:id="@+id/rbq14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Somewhat Agree" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvcbq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="The product or service performed exactly as I expected."
+                android:textColor="#000000"
+                app:layout_constraintStart_toStartOf="@+id/rgq1"
+                app:layout_constraintTop_toBottomOf="@+id/rgq1" />
+
+            <CheckBox
+                android:id="@+id/CBq1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Strongly Disagree"
+                app:layout_constraintStart_toStartOf="@+id/tvcbq1"
+                app:layout_constraintTop_toBottomOf="@+id/tvcbq1" />
+
+            <CheckBox
+                android:id="@+id/CBq2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Neither Agree nor Disagree"
+                app:layout_constraintStart_toStartOf="@+id/CBq1"
+                app:layout_constraintTop_toBottomOf="@+id/CBq1" />
+
+            <CheckBox
+                android:id="@+id/CBq3"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="Somewhat Disagree"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/CBq1"
+                app:layout_constraintTop_toBottomOf="@+id/tvcbq1" />
+
+            <CheckBox
+                android:id="@+id/CBq4"
+                android:layout_width="wrap_content"
+                android:layout_height="32dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:text="Somewhat Agree"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/CBq2"
+                app:layout_constraintTop_toBottomOf="@+id/CBq3" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </layout>

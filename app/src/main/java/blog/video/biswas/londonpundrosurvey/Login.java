@@ -107,6 +107,7 @@ public class Login extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     Intent intent = new Intent(Login.this, MainActivity.class);
                     startActivity(intent);
+                    finish();
                 } else {
                     //Log.i("registrationLog", "Fail to login");
                     Toast.makeText(Login.this, "Please Input Correct Email or Password !",Toast.LENGTH_LONG).show();
