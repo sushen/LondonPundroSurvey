@@ -9,7 +9,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -24,7 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class Login extends AppCompatActivity {
 
     DateTimeHandler TimeHandler;
-    DBHelper DatabaseHelper;
+    CAdapter DatabaseHelper;
 
     Globals Global;
     Cursor cursor;
@@ -40,8 +39,6 @@ public class Login extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-
-        DatabaseHelper = new DBHelper();
         TimeHandler = new DateTimeHandler();
 
 

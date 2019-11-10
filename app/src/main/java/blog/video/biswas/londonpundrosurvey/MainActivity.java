@@ -5,6 +5,7 @@ import androidx.databinding.DataBindingUtil;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
     Cursor CursorCur;
 
 
-    DBHelper DatabaseHelper;
+    CAdapter DatabaseHelper;
     DateTimeHandler TimeHandler;
     Globals Global;
 
@@ -45,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference();
 
-        DatabaseHelper = new DBHelper();
         TimeHandler = new DateTimeHandler();
         Global = Globals.getInstance();
 
@@ -95,6 +95,15 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        binding.btnSD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ShowData.class);
+                startActivity(intent);
+                finish();
             }
         });
 
@@ -151,8 +160,8 @@ public class MainActivity extends AppCompatActivity {
         pundroFrom.setRgq1(Q1V());
         pundroFrom.setCBq1(Cb1V());
 
-        pundroFrom.setId(databaseReference.child("PundroFromList").push().getKey());
-        databaseReference.child("PundroFromList")
+        pundroFrom.setId(databaseReference.child(binding.spicountry.getSelectedItem().toString()).push().getKey());
+        databaseReference.child(binding.spicountry.getSelectedItem().toString())
                 .child(pundroFrom.getId())
                 .setValue(pundroFrom);
 
@@ -181,6 +190,7 @@ public class MainActivity extends AppCompatActivity {
             binding.CBq2.setChecked(false);
             binding.CBq3.setChecked(false);
             binding.CBq4.setChecked(false);
+            binding.spicountry.setSelected(false);
 
         } catch (NumberFormatException e) {
             return;

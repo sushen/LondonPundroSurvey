@@ -1,6 +1,7 @@
 package blog.video.biswas.londonpundrosurvey;
 
 public class PundroFrom {
+    private String country;
     private String id;
     private String fristName;
     private String lastName;
@@ -12,13 +13,17 @@ public class PundroFrom {
     private String time;
 
 
-//    public PundroFrom(String fristName, String lastName, String mail, String comment, String rgq1) {
-//        this.fristName = fristName;
-//        lastName = lastName;
-//        this.mail = mail;
-//        Comment = comment;
-//        this.rgq1 = rgq1;
-//    }
+    public PundroFrom() {
+
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public String getRgq1() {
         return rgq1;
