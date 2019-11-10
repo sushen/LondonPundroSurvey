@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ShowData.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -158,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         pundroFrom.setDate(TimeHandler.getSystemDate());
         pundroFrom.setTime(TimeHandler.getSystemTime());
         pundroFrom.setRgq1(Q1V());
-        pundroFrom.setCBq1(Cb1V());
+        pundroFrom.setCbq1(Cb1V());
 
         pundroFrom.setId(databaseReference.child(binding.spicountry.getSelectedItem().toString()).push().getKey());
         databaseReference.child(binding.spicountry.getSelectedItem().toString())

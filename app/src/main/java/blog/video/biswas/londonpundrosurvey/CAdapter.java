@@ -1,7 +1,6 @@
 package blog.video.biswas.londonpundrosurvey;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 
 import java.util.List;
 
@@ -33,7 +31,7 @@ public class CAdapter extends ArrayAdapter<PundroFrom> {
 
         PundroFrom pundroFrom = fromList.get(position);
 
-        TextView country =  view.findViewById(R.id.tvcountryname);
+//        TextView country =  view.findViewById(R.id.tvcountryname);
         TextView fristname =  view.findViewById(R.id.tvNameFrist);
         TextView lastname =  view.findViewById(R.id.tvNameLast);
         TextView email =  view.findViewById(R.id.tvEmailShow);
@@ -41,13 +39,13 @@ public class CAdapter extends ArrayAdapter<PundroFrom> {
         TextView q1a =  view.findViewById(R.id.rvQ1A);
         TextView chackbox =  view.findViewById(R.id.cvA);
 
-        country.setText(pundroFrom.getCountry());
+//        country.setText(pundroFrom.getCountry());
         fristname.setText(pundroFrom.getFristName());
         lastname.setText(pundroFrom.getLastName());
         email.setText(pundroFrom.getMail());
         number.setText(pundroFrom.getComment());
         q1a.setText(pundroFrom.getRgq1());
-        chackbox.setText(pundroFrom.getCBq1());
+        chackbox.setText(pundroFrom.getCbq1());
 
         return view;
     }

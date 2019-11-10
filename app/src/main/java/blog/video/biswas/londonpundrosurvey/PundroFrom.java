@@ -6,9 +6,9 @@ public class PundroFrom {
     private String fristName;
     private String lastName;
     private String mail;
-    private String Comment;
+    private String comment;
     private String rgq1;
-    private String CBq1;
+    private String cbq1;
     private String date;
     private String time;
 
@@ -23,22 +23,6 @@ public class PundroFrom {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getRgq1() {
-        return rgq1;
-    }
-
-    public void setRgq1(String rgq1) {
-        this.rgq1 = rgq1;
-    }
-
-    public String getComment() {
-        return Comment;
-    }
-
-    public void setComment(String comment) {
-        Comment = comment;
     }
 
     public String getId() {
@@ -73,12 +57,28 @@ public class PundroFrom {
         this.mail = mail;
     }
 
-    public String getCBq1() {
-        return CBq1;
+    public String getComment() {
+        return comment;
     }
 
-    public void setCBq1(String CBq1) {
-        this.CBq1 = CBq1;
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getRgq1() {
+        return rgq1;
+    }
+
+    public void setRgq1(String rgq1) {
+        this.rgq1 = rgq1;
+    }
+
+    public String getCbq1() {
+        return cbq1;
+    }
+
+    public void setCbq1(String cbq1) {
+        this.cbq1 = cbq1;
     }
 
     public String getDate() {

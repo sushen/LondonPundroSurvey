@@ -34,28 +34,26 @@ public class ShowData extends AppCompatActivity {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_showdata);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference(binding.spicountry.getSelectedItem().toString());//binding.spicountry.getSelectedItem().toString()
+        databaseReference = firebaseDatabase.getReference("New Zealand");//binding.spicountry.getSelectedItem().toString()
         fromList = new ArrayList<>();
 
         cAdapter = new CAdapter(ShowData.this, fromList);
 
-        binding.RView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                String name = binding.RView.getSelectedItem().toString();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });
-
+//        binding.RView.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+//            @Override
+//            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+//
+//
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> adapterView) {
+//
+//
+//            }
+//        });
+//
     }
-
-
-
 
     @Override
     protected void onStart() {
@@ -66,10 +64,10 @@ public class ShowData extends AppCompatActivity {
 
                 List<PundroFrom> fromList = new ArrayList<>();
 
-                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()){
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
 
                     fromList.clear();
-                    PundroFrom pundroFrom = dataSnapshot1.child(binding.spicountry.getSelectedItem().toString()).getValue(PundroFrom.class);
+                    PundroFrom pundroFrom = dataSnapshot1.getValue(PundroFrom.class);
                     fromList.add(pundroFrom);
                 }
 

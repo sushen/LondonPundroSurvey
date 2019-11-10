@@ -8,19 +8,21 @@
     android:orientation="vertical"
     tools:context=".ShowData">
 
-    <Spinner
-        android:id="@+id/spicountry"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/country_arrays"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp">
+<!--    <Spinner-->
+<!--        android:id="@+id/spicountry1"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:entries="@array/country_arrays"-->
+<!--        android:layout_marginStart="15dp"-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:layout_marginEnd="15dp"-->
+<!--        android:layout_marginBottom="15dp">-->
 
-    </Spinner>
+<!--    </Spinner>-->
     <ListView
         android:id="@+id/RView"
+        android:listSelector="#FFC29191"
+        android:dividerHeight="2dp"
         android:divider = "#FFFFC107"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
