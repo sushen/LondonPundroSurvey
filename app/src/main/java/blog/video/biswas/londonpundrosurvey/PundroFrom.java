@@ -1,20 +1,29 @@
 package blog.video.biswas.londonpundrosurvey;
 
 public class PundroFrom {
+    private String country;
     private String id;
     private String fristName;
-    private String LastName;
+    private String lastName;
     private String mail;
+    private String comment;
+    private String rgq1;
+    private String cbq1;
+    private String date;
+    private String time;
 
-    public String getComment() {
-        return Comment;
+
+    public PundroFrom() {
+
     }
 
-    public void setComment(String comment) {
-        Comment = comment;
+    public String getCountry() {
+        return country;
     }
 
-    private String Comment;
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public String getId() {
         return id;
@@ -33,11 +42,11 @@ public class PundroFrom {
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public String getMail() {
@@ -46,5 +55,45 @@ public class PundroFrom {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
+    public void setComment(String comment) {
+        this.comment = comment;
+    }
+
+    public String getRgq1() {
+        return rgq1;
+    }
+
+    public void setRgq1(String rgq1) {
+        this.rgq1 = rgq1;
+    }
+
+    public String getCbq1() {
+        return cbq1;
+    }
+
+    public void setCbq1(String cbq1) {
+        this.cbq1 = cbq1;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

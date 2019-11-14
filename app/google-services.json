@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "588357935077-j3j9ejvhpkrjjrk3f1gkofmpaa9ecgnd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "blog.video.biswas.londonpundrosurvey",
+            "certificate_hash": "c5cb62a9566d4472bd03bff9c803d32a3925ef0c"
+          }
+        },
+        {
           "client_id": "588357935077-998akdo2c80nh2f8bs98eo4g4gsp3ogp.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
